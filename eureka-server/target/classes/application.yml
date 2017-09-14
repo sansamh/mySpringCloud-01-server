@@ -1,0 +1,23 @@
+info:
+  name: eureka-server
+  contact: sansamh
+
+
+server:
+  port: 8761
+  
+eureka:
+  client:
+    registeWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+      
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    # false 关闭自我保护，不管如何都要剔除心跳检测异常的服务
+    enableSelfPreservation: true
+    # updatePeerEurekaNodes执行间隔
+    peerEurekaNodesUpdateIntervalMs: 10000000
+  instance:
+    hostname: eureka1
